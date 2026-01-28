@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@media print {
+  @page {
+    size: auto;
+    margin: 0mm;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
+
+.bol-container {
+  max-width: 8.5in;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+}
+
+/* Custom styling for inputs to look good when printed but visible on screen */
+input,
+textarea {
+  background: transparent;
+}
