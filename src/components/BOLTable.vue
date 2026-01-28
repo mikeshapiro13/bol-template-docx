@@ -87,10 +87,11 @@ defineExpose({ grandTotal })
           <td class="border border-gray-300 px-2 py-1">
             <input 
               v-if="product.included"
-              type="date"
+              type="text"
               :value="product.expiration"
               @input="updateProduct(index, 'expiration', $event.target.value)"
               class="w-full text-center border border-gray-300 rounded px-1 py-1 focus:outline-none focus:ring-1 focus:ring-blue-500 text-xs"
+              placeholder="MM/DD/YY"
             >
             <span v-else class="block text-center text-gray-300">-</span>
           </td>

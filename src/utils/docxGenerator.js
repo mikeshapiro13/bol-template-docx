@@ -14,15 +14,6 @@ export const generateDOCX = async (formData, products) => {
         return lines.filter(Boolean);
     };
 
-    const formatDate = (dateStr) => {
-        if (!dateStr) return "";
-        const parts = dateStr.split('-');
-        if (parts.length === 3) {
-            return `${parts[1]}/${parts[2]}/${parts[0]}`;
-        }
-        return dateStr;
-    };
-
     // Standard Word page width (8.5") is 12240 twips.
     // 0.5" margins (720 twips) on each side leaves 10800 twips for content.
     const CONTENT_WIDTH = 10800;
@@ -66,11 +57,11 @@ export const generateDOCX = async (formData, products) => {
                             children: [
                                 new TableCell({
                                     width: { size: CONTENT_WIDTH * 0.6, type: WidthType.DXA },
-                                    children: [
+                                    children: (formData.instructions || "").split('\n').map(line =>
                                         new Paragraph({
-                                            children: [new TextRun({ text: formData.instructions || "", size: 20 })],
-                                        }),
-                                    ],
+                                            children: [new TextRun({ text: line, size: 20 })],
+                                        })
+                                    ),
                                 }),
                                 new TableCell({
                                     width: { size: CONTENT_WIDTH * 0.4, type: WidthType.DXA },
@@ -144,7 +135,7 @@ export const generateDOCX = async (formData, products) => {
                 // 4. Products Table
                 new Table({
                     width: { size: CONTENT_WIDTH, type: WidthType.DXA },
-                    columnWidths: [800, 800, 1400, 1000, 3200, 1800, 1800], // Adjusting for 7 total columns
+                    columnWidths: [800, 800, 1400, 1000, 3200, 1800, 1800],
                     rows: [
                         new TableRow({
                             tableHeader: true,
@@ -163,7 +154,7 @@ export const generateDOCX = async (formData, products) => {
                             children: [
                                 { t: p.quantity, a: AlignmentType.CENTER },
                                 { t: (parseInt(p.quantity) || 0) * (p.casesPerPallet || 0), a: AlignmentType.CENTER },
-                                { t: formatDate(p.expiration), a: AlignmentType.CENTER },
+                                { t: p.expiration || "", a: AlignmentType.CENTER },
                                 { t: p.code, a: AlignmentType.CENTER },
                                 { t: p.description, a: AlignmentType.LEFT },
                                 { t: p.canUpc, a: AlignmentType.LEFT },
@@ -180,7 +171,7 @@ export const generateDOCX = async (formData, products) => {
                         })),
                     ],
                 }),
-                new Paragraph({ text: "", spacing: { after: 300 } }),
+                new Paragraph({ text: "", spacing: { after: 100 } }),
 
                 // 5. Totals
                 new Paragraph({
@@ -205,18 +196,14 @@ export const generateDOCX = async (formData, products) => {
                 }),
                 new Paragraph({ text: "", spacing: { after: 100 } }),
 
-                // 7. Signature Footer (Multiple Tables for layout control)
-                // Shipper / Receiver lines
+                // 7. Signature Footer
                 new Table({
                     width: { size: CONTENT_WIDTH, type: WidthType.DXA },
                     columnWidths: [4800, 1200, 4800],
                     borders: {
-                        top: { style: BorderStyle.NONE },
-                        bottom: { style: BorderStyle.NONE },
-                        left: { style: BorderStyle.NONE },
-                        right: { style: BorderStyle.NONE },
-                        insideHorizontal: { style: BorderStyle.NONE },
-                        insideVertical: { style: BorderStyle.NONE },
+                        top: { style: BorderStyle.NONE }, bottom: { style: BorderStyle.NONE },
+                        left: { style: BorderStyle.NONE }, right: { style: BorderStyle.NONE },
+                        insideHorizontal: { style: BorderStyle.NONE }, insideVertical: { style: BorderStyle.NONE },
                     },
                     rows: [
                         new TableRow({
@@ -245,7 +232,6 @@ export const generateDOCX = async (formData, products) => {
                 }),
                 new Paragraph({ text: "", spacing: { before: 100 } }),
 
-                // Carrier line
                 new Table({
                     width: { size: CONTENT_WIDTH, type: WidthType.DXA },
                     columnWidths: [CONTENT_WIDTH],
@@ -272,7 +258,6 @@ export const generateDOCX = async (formData, products) => {
                 }),
                 new Paragraph({ text: "", spacing: { before: 100 } }),
 
-                // Driver / Date lines
                 new Table({
                     width: { size: CONTENT_WIDTH, type: WidthType.DXA },
                     columnWidths: [7000, 800, 3000],

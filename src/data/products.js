@@ -30,7 +30,6 @@ export const products = [
     { code: '158018', description: 'Monster Ultra Watermelon', canUpc: '070847037989', caseUpc: '070847037996', quantity: '', casesPerPallet: 70 },
     { code: '157527', description: 'Monster Ultra Fiesta', canUpc: '070847034629', caseUpc: '070847034636', quantity: '', casesPerPallet: 70 },
     { code: '157526', description: 'Monster Ultra Rosa Zero', canUpc: '070847034643', caseUpc: '070847034650', quantity: '', casesPerPallet: 70 },
-    { code: '146771', description: 'Monster Ultra Red (disco\'d)', canUpc: '070847017554', caseUpc: '773821656335', quantity: '', casesPerPallet: 70 },
     { code: '411462', description: 'Monster Ultra Peachy Keen', canUpc: '070847029427', caseUpc: '070847029434', quantity: '', casesPerPallet: 70 },
     { code: '412024', description: 'Monster Ultra Strawberry Dreams', canUpc: '070847891857', caseUpc: '070847891864', quantity: '', casesPerPallet: 70 },
     { code: '412633', description: 'Monster Ultra Fantasy Ruby Red', canUpc: '070847896180', caseUpc: '070847896197', quantity: '', casesPerPallet: 70 },
@@ -38,16 +37,12 @@ export const products = [
     { code: '153389', description: 'Monster Juice Mango Loco', canUpc: '070847029014', caseUpc: '070847029007', quantity: '', casesPerPallet: 70 },
     { code: '151511', description: 'Monster Juice Pipeline Punch', canUpc: '070847022909', caseUpc: '070847022916', quantity: '', casesPerPallet: 70 },
     { code: '155811', description: 'Monster Juice Pacific Punch', canUpc: '070847031918', caseUpc: '070847031901', quantity: '', casesPerPallet: 70 },
-    { code: '411457', description: 'Monster Juice Aussie Lemnonade (disco\'d)', canUpc: '070847028147', caseUpc: '070847028185', quantity: '', casesPerPallet: 70 },
-    { code: '410237', description: 'Monster Juice Khaotic (disco\'s)', canUpc: '070847036944', caseUpc: '070847036951', quantity: '', casesPerPallet: 70 },
     { code: '412701', description: 'Monster Juice Rio Punch', canUpc: '070847896159', caseUpc: '070847896166', quantity: '', casesPerPallet: 70 },
     { code: '413305', description: 'Monster Juice Viking Berry ', canUpc: '070847898320', caseUpc: '070847898337', quantity: '', casesPerPallet: 70 },
     { code: '413895', description: 'Monster Juice Bad Apple', canUpc: '070847899563', caseUpc: '070847899570', quantity: '', casesPerPallet: 70 },
     { code: '413893', description: 'Monster Orange Dreamsicle (10/6/25) replaces 411665', canUpc: '', caseUpc: '', quantity: '', casesPerPallet: 70 },
 
     // Monster Reserve 16oz Energy Drinks (24 Pack) (10/7/70)
-    { code: '411665', description: 'Monster Reserve Orange Dreamsicle (disco\'s)', canUpc: '070847899389', caseUpc: '070847899402', quantity: '', casesPerPallet: 70 },
-    { code: '412583', description: 'Monster Reserve Peaches & Cream (disco\'d)', canUpc: '070847896272', caseUpc: '070847896272', quantity: '', casesPerPallet: 70 },
     { code: '413892', description: 'Monster Electric Blue', canUpc: '070847899334', caseUpc: '070847899341', quantity: '', casesPerPallet: 70 },
 
     // Monster 24oz (12 Pack)
@@ -58,12 +53,10 @@ export const products = [
 
     // Full Throttle
     { code: '152202', description: 'Full Throttle', canUpc: '815154020183 ', caseUpc: '815154020190', quantity: '', casesPerPallet: 70 },
-    { code: '152203', description: 'Full Throttle True Blue (disco\'d)', canUpc: '815154020237', caseUpc: '815154020244', quantity: '', casesPerPallet: 70 },
 
     // NOS
     { code: '152196', description: 'NOS', canUpc: '815154020008', caseUpc: '815154020015', quantity: '', casesPerPallet: 70 },
     { code: '412514', description: 'NOS Zero Sugar', canUpc: '815154025911', caseUpc: '815154025928', quantity: '', casesPerPallet: 70 },
     { code: '152197', description: 'NOS Grape', canUpc: '815154020091', caseUpc: '815154020107', quantity: '', casesPerPallet: 70 },
-    { code: '156518', description: 'NOS Sonic Sour Apple (disco\'d)', canUpc: '815154021500', caseUpc: '815154021517', quantity: '', casesPerPallet: 70 },
     { code: '151988', description: 'NOS Energy Original 24oz', canUpc: '815154020077', caseUpc: '815154020084', quantity: '', casesPerPallet: 70 },
 ];
