@@ -1,7 +1,7 @@
 import { Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell, WidthType, AlignmentType, BorderStyle, VerticalAlign } from "docx";
 import { saveAs } from "file-saver";
 
-export const generateDOCX = async (formData, products) => {
+export const generateDOCX = async (formData, products, catalogName) => {
     const includedProducts = products.filter(p => p.included && p.quantity);
     const totalPallets = includedProducts.reduce((acc, curr) => acc + (parseInt(curr.quantity) || 0), 0);
     const totalCases = includedProducts.reduce((acc, curr) => acc + ((parseInt(curr.quantity) || 0) * (curr.casesPerPallet || 0)), 0);
@@ -296,5 +296,5 @@ export const generateDOCX = async (formData, products) => {
     });
 
     const blob = await Packer.toBlob(doc);
-    saveAs(blob, `BOL_${formData.date}.docx`);
+    saveAs(blob, `BOL_${catalogName}_${formData.date}.docx`);
 };
