@@ -133,5 +133,21 @@ export const productCatalogs = {
         { code: '', caseUpc: '76406021604', description: 'Jumex Lata 24/335 ml - Guava', quantity: '', casesPerPallet: 100, canUpc: '' },
         { code: '', caseUpc: '76406021901', description: 'Jumex Lata 24/335 ml - Peach', quantity: '', casesPerPallet: 100, canUpc: '' },
         { code: '', caseUpc: '76406021802', description: 'Jumex Lata 24/335 ml - Mango', quantity: '', casesPerPallet: 100, canUpc: '' },
+    ],
+    'Alani': [
+        { code: '', description: 'Alani Nu Cherry Slush 2x12oz', canUpc: '', caseUpc: '810030512257', quantity: '', casesPerPallet: 104 },
+        { code: '', description: 'Alani Nu Hawaiian Shaved Ice 2x12oz New Label', canUpc: '', caseUpc: '850645008387', quantity: '', casesPerPallet: 104 },
+        { code: '', description: 'Alani Nu Cherry Twist 2x12oz', canUpc: '', caseUpc: '810030518082', quantity: '', casesPerPallet: 104 },
+        { code: '', description: 'Alani Nu Watermelon Wave 2x12oz', canUpc: '', caseUpc: '810030510482', quantity: '', casesPerPallet: 104 },
+        { code: '', description: 'Alani Nu Strawberry Sunrise 2x12oz', canUpc: '', caseUpc: '810030519133', quantity: '', casesPerPallet: 104 },
+        { code: '', description: 'Alani Nu Blue Slush 2x12oz', canUpc: '', caseUpc: '810030510154', quantity: '', casesPerPallet: 104 },
+        { code: '', description: 'Alani Nu Pink Slush 2x12oz', canUpc: '', caseUpc: '810030518501', quantity: '', casesPerPallet: 104 },
+        { code: '', description: 'Alani Nu Juicy Peach 2x12oz', canUpc: '', caseUpc: '810030513827', quantity: '', casesPerPallet: 104 },
+        { code: '', description: 'Alani Nu Cosmic Stardust 2x12oz', canUpc: '', caseUpc: '810030510024', quantity: '', casesPerPallet: 104 },
+        { code: '', description: 'Alani Nu Dream Float 2x12oz', canUpc: '', caseUpc: '810030514077', quantity: '', casesPerPallet: 104 },
+        { code: '', description: 'Alani Nu Orange Kiss 2x12oz', canUpc: '', caseUpc: '850645008363', quantity: '', casesPerPallet: 104 },
+        { code: '', description: 'Alani Nu Sherbet Swirl 2x12oz', canUpc: '', caseUpc: '810030519157', quantity: '', casesPerPallet: 104 },
+        { code: '', description: 'Alani Nu Cotton Candy 2x12oz', canUpc: '', caseUpc: '810030519171', quantity: '', casesPerPallet: 104 },
+        { code: '', description: 'Alani Nu Breezeberry 2x12oz', canUpc: '', caseUpc: '810030511052', quantity: '', casesPerPallet: 104 },
     ]
 };
