@@ -29,7 +29,7 @@ export const productCatalogs = {
         { code: '150706', description: 'Monster Ultra Sunrise', canUpc: '070847020905', caseUpc: '070847020912', quantity: '', casesPerPallet: 70 },
         { code: '156530', description: 'Monster Ultra Paradise', canUpc: '070847033080', caseUpc: '070847033097', quantity: '', casesPerPallet: 70 },
         { code: '158018', description: 'Monster Ultra Watermelon', canUpc: '070847037989', caseUpc: '070847037996', quantity: '', casesPerPallet: 70 },
-        { code: '157527', description: 'Monster Ultra Fiesta', canUpc: '070847034629', caseUpc: '070847034636', quantity: '', casesPerPallet: 70 },
+        { code: '414021', description: 'Monster Voodoo Grape', canUpc: '', caseUpc: '', quantity: '', casesPerPallet: 70 },
         { code: '157526', description: 'Monster Ultra Rosa Zero', canUpc: '070847034643', caseUpc: '070847034650', quantity: '', casesPerPallet: 70 },
         { code: '411462', description: 'Monster Ultra Peachy Keen', canUpc: '070847029427', caseUpc: '070847029434', quantity: '', casesPerPallet: 70 },
         { code: '412024', description: 'Monster Ultra Strawberry Dreams', canUpc: '070847891857', caseUpc: '070847891864', quantity: '', casesPerPallet: 70 },
