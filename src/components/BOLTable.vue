@@ -1,11 +1,24 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 
 const props = defineProps({
   products: Array
 })
 
 const emit = defineEmits(['update:products'])
+
+const showAddForm = ref(false)
+
+const newProduct = ref({
+  code: '',
+  description: '',
+  canUpc: '',
+  caseUpc: '',
+  casesPerPallet: 0,
+  included: false,
+  quantity: '',
+  expiration: ''
+})
 
 const updateProduct = (index, field, value) => {
   const newProducts = [...props.products]
@@ -25,6 +38,28 @@ const toggleInclude = (index) => {
   emit('update:products', newProducts)
 }
 
+const addProduct = () => {
+  const newProducts = [...props.products, { ...newProduct.value }]
+  emit('update:products', newProducts)
+  newProduct.value = {
+    code: '',
+    description: '',
+    canUpc: '',
+    caseUpc: '',
+    casesPerPallet: 0,
+    included: false,
+    quantity: '',
+    expiration: ''
+  }
+  showAddForm.value = false
+}
+
+const deleteProduct = (index) => {
+  const newProducts = [...props.products]
+  newProducts.splice(index, 1)
+  emit('update:products', newProducts)
+}
+
 const grandTotal = computed(() => {
   return props.products.reduce((acc, curr) => {
     if (curr.included && curr.quantity) {
@@ -38,7 +73,20 @@ defineExpose({ grandTotal })
 </script>
 
 <template>
-  <div class="mb-8 overflow-x-auto">
+  <div class="mb-8">
+    <div class="mb-4">
+      <button @click="showAddForm = !showAddForm" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Add Product</button>
+    </div>
+    <div v-if="showAddForm" class="mb-4 p-4 border border-gray-300 rounded bg-gray-50">
+      <form @submit.prevent="addProduct" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input v-model="newProduct.code" placeholder="Code" required class="border border-gray-300 rounded px-3 py-2">
+        <input v-model="newProduct.description" placeholder="Description" required class="border border-gray-300 rounded px-3 py-2">
+        <input v-model="newProduct.canUpc" placeholder="Can UPC" class="border border-gray-300 rounded px-3 py-2">
+        <input v-model="newProduct.caseUpc" placeholder="Case UPC" class="border border-gray-300 rounded px-3 py-2">
+        <input v-model.number="newProduct.casesPerPallet" placeholder="Cases per Pallet" required class="border border-gray-300 rounded px-3 py-2">
+        <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 col-span-1 md:col-span-2">Add Product</button>
+      </form>
+    </div>
     <table class="min-w-full border-collapse border border-gray-300 text-sm">
       <thead>
         <tr class="bg-gray-100">
@@ -50,6 +98,7 @@ defineExpose({ grandTotal })
           <th class="border border-gray-300 px-4 py-2 text-left">Description</th>
           <th class="border border-gray-300 px-4 py-2 text-left">Can UPC</th>
           <th class="border border-gray-300 px-4 py-2 text-left">Case UPC</th>
+          <th class="border border-gray-300 px-4 py-2 w-16 text-center">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -102,6 +151,10 @@ defineExpose({ grandTotal })
           
           <td class="border border-gray-300 px-4 py-1 font-mono text-xs text-gray-500">{{ product.canUpc }}</td>
           <td class="border border-gray-300 px-4 py-1 font-mono text-xs text-gray-500">{{ product.caseUpc }}</td>
+          <!-- Actions -->
+          <td class="border border-gray-300 px-4 py-1 text-center">
+            <button @click="deleteProduct(index)" class="text-red-500 hover:text-red-700 text-xl">&times;</button>
+          </td>
         </tr>
       </tbody>
       <tfoot>
@@ -111,7 +164,7 @@ defineExpose({ grandTotal })
               <td class="border border-gray-800 px-2 py-2 text-center text-sm">
                 {{ products.reduce((acc, curr) => acc + (curr.included ? (parseInt(curr.quantity) || 0) * (curr.casesPerPallet || 0) : 0), 0) }} Cases
               </td>
-              <td colspan="5" class="border border-gray-800 px-4 py-2"></td>
+              <td colspan="6" class="border border-gray-800 px-4 py-2"></td>
           </tr>
       </tfoot>
     </table>

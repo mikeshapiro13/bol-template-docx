@@ -23,6 +23,13 @@
   background: white;
 }
 
+@media screen {
+  .bol-container {
+    max-width: none;
+    width: 100%;
+  }
+}
+
 /* Custom styling for inputs to look good when printed but visible on screen */
 input,
 textarea {

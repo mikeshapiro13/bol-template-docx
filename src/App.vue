@@ -43,7 +43,7 @@ const handlePrint = () => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-100 p-8 print:p-0 print:bg-white">
+  <div class="min-h-screen bg-gray-100 p-4 print:p-0 print:bg-white">
     <!-- Toolbar (Hidden on Print) -->
     <div class="max-w-[8.5in] mx-auto mb-6 flex flex-col gap-4 no-print">
       <div class="flex justify-between items-center">
