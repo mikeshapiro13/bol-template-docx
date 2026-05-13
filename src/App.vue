@@ -1,21 +1,64 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import BOLHeader from './components/BOLHeader.vue'
 import BOLTable from './components/BOLTable.vue'
 import BOLFooter from './components/BOLFooter.vue'
-import { productCatalogs } from './data/products.js'
 import { generateDOCX } from './utils/docxGenerator'
 
-// State for the selected catalog
-const catalogNames = Object.keys(productCatalogs)
 const selectedCatalog = ref('Monster')
+const productCatalogs = ref({})
+const products = ref([])
+const tableRef = ref(null)
+const catalogError = ref('')
+const loadingCatalogs = ref(true)
+const savingCatalog = ref(false)
 
-// Initialize products with an 'included' flag and expiration date
-const products = ref(productCatalogs[selectedCatalog.value].map(p => ({ ...p, included: false, quantity: '', expiration: '' })))
+const catalogNames = computed(() => Object.keys(productCatalogs.value))
 
-// Update products when catalog changes
+const hydrateProducts = (catalogProducts = []) => {
+  return catalogProducts.map(p => ({ ...p, included: false, quantity: '', expiration: '' }))
+}
+
+const persistentProduct = (product) => ({
+  code: product.code || '',
+  description: product.description || '',
+  canUpc: product.canUpc || '',
+  caseUpc: product.caseUpc || '',
+  casesPerPallet: Number(product.casesPerPallet) || 0
+})
+
+const readApiError = async (response) => {
+  try {
+    const body = await response.json()
+    return body.error || `Request failed with status ${response.status}.`
+  } catch {
+    return `Request failed with status ${response.status}.`
+  }
+}
+
+const loadCatalogs = async () => {
+  loadingCatalogs.value = true
+  catalogError.value = ''
+  try {
+    const response = await fetch('/api/catalogs')
+    if (!response.ok) {
+      throw new Error(await readApiError(response))
+    }
+
+    productCatalogs.value = await response.json()
+    if (!productCatalogs.value[selectedCatalog.value]) {
+      selectedCatalog.value = catalogNames.value[0] || ''
+    }
+    products.value = hydrateProducts(productCatalogs.value[selectedCatalog.value])
+  } catch (error) {
+    catalogError.value = error.message || 'Unable to load product catalogs.'
+  } finally {
+    loadingCatalogs.value = false
+  }
+}
+
 watch(selectedCatalog, (newCatalog) => {
-  products.value = productCatalogs[newCatalog].map(p => ({ ...p, included: false, quantity: '', expiration: '' }))
+  products.value = hydrateProducts(productCatalogs.value[newCatalog])
 })
 
 const formData = ref({
@@ -40,6 +83,62 @@ const formData = ref({
 const handlePrint = () => {
   generateDOCX(formData.value, products.value, selectedCatalog.value)
 }
+
+const addCatalogProduct = async (product) => {
+  if (!selectedCatalog.value) return
+
+  savingCatalog.value = true
+  catalogError.value = ''
+  try {
+    const response = await fetch(`/api/catalogs/${encodeURIComponent(selectedCatalog.value)}/products`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(persistentProduct(product))
+    })
+
+    if (!response.ok) {
+      throw new Error(await readApiError(response))
+    }
+
+    const savedProduct = await response.json()
+    productCatalogs.value[selectedCatalog.value] = [
+      ...(productCatalogs.value[selectedCatalog.value] || []),
+      savedProduct
+    ]
+    products.value = [...products.value, { ...savedProduct, included: false, quantity: '', expiration: '' }]
+    tableRef.value?.resetAddForm()
+  } catch (error) {
+    catalogError.value = error.message || 'Unable to add product.'
+  } finally {
+    savingCatalog.value = false
+  }
+}
+
+const deleteCatalogProduct = async (index) => {
+  if (!selectedCatalog.value) return
+
+  savingCatalog.value = true
+  catalogError.value = ''
+  try {
+    const response = await fetch(`/api/catalogs/${encodeURIComponent(selectedCatalog.value)}/products/${index}`, {
+      method: 'DELETE'
+    })
+
+    if (!response.ok) {
+      throw new Error(await readApiError(response))
+    }
+
+    productCatalogs.value[selectedCatalog.value] = (productCatalogs.value[selectedCatalog.value] || [])
+      .filter((_, productIndex) => productIndex !== index)
+    products.value = products.value.filter((_, productIndex) => productIndex !== index)
+  } catch (error) {
+    catalogError.value = error.message || 'Unable to delete product.'
+  } finally {
+    savingCatalog.value = false
+  }
+}
+
+onMounted(loadCatalogs)
 </script>
 
 <template>
@@ -50,7 +149,8 @@ const handlePrint = () => {
         <h1 class="text-2xl font-bold text-gray-800">BOL Generator</h1>
         <button 
           @click="handlePrint"
-          class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded shadow transition-colors flex items-center gap-2"
+          :disabled="loadingCatalogs"
+          class="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-bold py-2 px-6 rounded shadow transition-colors flex items-center gap-2"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z" clip-rule="evenodd" />
@@ -65,6 +165,7 @@ const handlePrint = () => {
         <select 
           id="catalog-select" 
           v-model="selectedCatalog"
+          :disabled="loadingCatalogs || savingCatalog"
           class="flex-1 max-w-xs border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           <option v-for="name in catalogNames" :key="name" :value="name">
@@ -72,6 +173,9 @@ const handlePrint = () => {
           </option>
         </select>
         <span class="text-sm text-gray-500 italic">Switching catalogs will reset current selections.</span>
+      </div>
+      <div v-if="catalogError" class="bg-red-50 border border-red-200 text-red-700 rounded px-4 py-3 text-sm">
+        {{ catalogError }}
       </div>
     </div>
 
@@ -90,7 +194,12 @@ const handlePrint = () => {
       />
 
       <BOLTable 
+        ref="tableRef"
         v-model:products="products"
+        :catalog-error="catalogError"
+        :saving-catalog="savingCatalog"
+        @add-product="addCatalogProduct"
+        @delete-product="deleteCatalogProduct"
       />
 
       <BOLFooter />

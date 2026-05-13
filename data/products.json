@@ -1,0 +1,1195 @@
+{
+  "Monster": [
+    {
+      "code": "134926",
+      "description": "Java Monster Mean Bean",
+      "canUpc": "070847812609",
+      "caseUpc": "070847831037",
+      "casesPerPallet": 133
+    },
+    {
+      "code": "134929",
+      "description": "Java Monster Loca Moca",
+      "canUpc": "070847812715",
+      "caseUpc": "070847831068",
+      "casesPerPallet": 133
+    },
+    {
+      "code": "151811",
+      "description": "Java Monster Salted Caramel",
+      "canUpc": "070847024026",
+      "caseUpc": "070847024033",
+      "casesPerPallet": 133
+    },
+    {
+      "code": "134923",
+      "description": "Java Monster Irish Blend",
+      "canUpc": "070847812517",
+      "caseUpc": "070847831013",
+      "casesPerPallet": 133
+    },
+    {
+      "code": "412030",
+      "description": "Java Monster Café Latte",
+      "canUpc": "070847891994",
+      "caseUpc": "070847892007",
+      "casesPerPallet": 133
+    },
+    {
+      "code": "138036",
+      "description": "Monster Rehab Tea & Lemonade",
+      "canUpc": "070847003229",
+      "caseUpc": "070847003236",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "150885",
+      "description": "Monster Rehab Peach Tea",
+      "canUpc": "070847021520",
+      "caseUpc": "070847021537",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "412182",
+      "description": "Monster Rehab Wild Berry",
+      "canUpc": "070847894087",
+      "caseUpc": "070847894094",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "412588",
+      "description": "Monster Rehab Green Tea",
+      "canUpc": "070847896678",
+      "caseUpc": "070847896685",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "133129",
+      "description": "Monster Energy Green",
+      "canUpc": "070847811169",
+      "caseUpc": "070847810162",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "410844",
+      "description": "Monster Nitro Super Dry",
+      "canUpc": "070847037750",
+      "caseUpc": "070847037767",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "133131",
+      "description": "Monster Lo-Carb",
+      "canUpc": "070847811268",
+      "caseUpc": "070847810261",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "137400",
+      "description": "Monster Zero Sugar",
+      "canUpc": "070847000037",
+      "caseUpc": "070847000044",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "413994",
+      "description": "Monster Energy Strawberry Shot (2/9/26)",
+      "canUpc": "070847899693",
+      "caseUpc": "070847899709",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "413995",
+      "description": "Monster Energy Zero Sugar Strawberry Shot",
+      "canUpc": "070847899778",
+      "caseUpc": "070847899785",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "414009",
+      "description": "Monster Energy Lando Norris Zero Sugar",
+      "canUpc": "070847900207",
+      "caseUpc": "070847900214",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "145105",
+      "description": "Monster Ultra Zero",
+      "canUpc": "070847012474",
+      "caseUpc": "070847012481",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "413146",
+      "description": "Monster Ultra Vice Guava",
+      "canUpc": "070847898146",
+      "caseUpc": "070847898153",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "153225",
+      "description": "Monster Ultra Violet",
+      "canUpc": "070847027324",
+      "caseUpc": "070847027355",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "414001",
+      "description": "Monster Ultra Punk Punch (3/2/26)",
+      "canUpc": "070847899617",
+      "caseUpc": "070847899624",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "413894",
+      "description": "Monster Ultra Wild Passion",
+      "canUpc": "070847899488",
+      "caseUpc": "070847899495",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "150706",
+      "description": "Monster Ultra Sunrise",
+      "canUpc": "070847020905",
+      "caseUpc": "070847020912",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "156530",
+      "description": "Monster Ultra Paradise",
+      "canUpc": "070847033080",
+      "caseUpc": "070847033097",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "158018",
+      "description": "Monster Ultra Watermelon",
+      "canUpc": "070847037989",
+      "caseUpc": "070847037996",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "414021",
+      "description": "Monster Voodoo Grape",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "157526",
+      "description": "Monster Ultra Rosa Zero",
+      "canUpc": "070847034643",
+      "caseUpc": "070847034650",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "411462",
+      "description": "Monster Ultra Peachy Keen",
+      "canUpc": "070847029427",
+      "caseUpc": "070847029434",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "412024",
+      "description": "Monster Ultra Strawberry Dreams",
+      "canUpc": "070847891857",
+      "caseUpc": "070847891864",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "412633",
+      "description": "Monster Ultra Fantasy Ruby Red",
+      "canUpc": "070847896180",
+      "caseUpc": "070847896197",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "413270",
+      "description": "Monster Ultra Blue Hawaiian",
+      "canUpc": "070847898245",
+      "caseUpc": "070847898252",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "153389",
+      "description": "Monster Juice Mango Loco",
+      "canUpc": "070847029014",
+      "caseUpc": "070847029007",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "151511",
+      "description": "Monster Juice Pipeline Punch",
+      "canUpc": "070847022909",
+      "caseUpc": "070847022916",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "155811",
+      "description": "Monster Juice Pacific Punch",
+      "canUpc": "070847031918",
+      "caseUpc": "070847031901",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "412701",
+      "description": "Monster Juice Rio Punch",
+      "canUpc": "070847896159",
+      "caseUpc": "070847896166",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "413305",
+      "description": "Monster Juice Viking Berry ",
+      "canUpc": "070847898320",
+      "caseUpc": "070847898337",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "413895",
+      "description": "Monster Juice Bad Apple",
+      "canUpc": "070847899563",
+      "caseUpc": "070847899570",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "413893",
+      "description": "Monster Orange Dreamsicle",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "413892",
+      "description": "Monster Electric Blue",
+      "canUpc": "070847899334",
+      "caseUpc": "070847899341",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "147322",
+      "description": "Monster Energy Mega Ultra Zero 24oz",
+      "canUpc": "070847017707",
+      "caseUpc": "070847017714",
+      "casesPerPallet": 102
+    },
+    {
+      "code": "133145",
+      "description": "Monster Energy Green Mega 24oz",
+      "canUpc": "070847811244",
+      "caseUpc": "070847810247",
+      "casesPerPallet": 102
+    },
+    {
+      "code": "413282",
+      "description": "Monster Energy Zero Sugar 24oz",
+      "canUpc": "070847898375",
+      "caseUpc": "070847898382",
+      "casesPerPallet": 102
+    },
+    {
+      "code": "133147",
+      "description": "Monster Energy Mega Lo-Carb 24oz",
+      "canUpc": "070847811213",
+      "caseUpc": "070847810216",
+      "casesPerPallet": 102
+    },
+    {
+      "code": "152202",
+      "description": "Full Throttle",
+      "canUpc": "815154020183 ",
+      "caseUpc": "815154020190",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "152196",
+      "description": "NOS",
+      "canUpc": "815154020008",
+      "caseUpc": "815154020015",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "412514",
+      "description": "NOS Zero Sugar",
+      "canUpc": "815154025911",
+      "caseUpc": "815154025928",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "152197",
+      "description": "NOS Grape",
+      "canUpc": "815154020091",
+      "caseUpc": "815154020107",
+      "casesPerPallet": 70
+    },
+    {
+      "code": "151988",
+      "description": "NOS Energy Original 24oz",
+      "canUpc": "815154020077",
+      "caseUpc": "815154020084",
+      "casesPerPallet": 70
+    }
+  ],
+  "Takis": [
+    {
+      "code": "123189",
+      "description": "Takis Fuego Rolled Tortilla 2 oz",
+      "canUpc": "",
+      "caseUpc": "757528005276",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "128389",
+      "description": "Takis Pop! Cheese Popcorn 2 oz",
+      "canUpc": "",
+      "caseUpc": "757528048297",
+      "casesPerPallet": 48
+    },
+    {
+      "code": "128463",
+      "description": "Takis Rolls Blue Heat Tortilla 2 oz",
+      "canUpc": "",
+      "caseUpc": "757528048440",
+      "casesPerPallet": 165
+    },
+    {
+      "code": "128465",
+      "description": "Takis Rolls Fuego Tortilla Chips 2 oz",
+      "canUpc": "",
+      "caseUpc": "757528XXXXXX",
+      "casesPerPallet": 165
+    },
+    {
+      "code": "128631",
+      "description": "Takis Rolls Dragon Tortilla 2 oz",
+      "canUpc": "",
+      "caseUpc": "757528048853",
+      "casesPerPallet": 165
+    },
+    {
+      "code": "128482",
+      "description": "Takis Rolls Intense Nacho Tortilla 2 oz",
+      "canUpc": "",
+      "caseUpc": "757528048518",
+      "casesPerPallet": 165
+    },
+    {
+      "code": "128483",
+      "description": "Takis Rolls Cheese Tortilla 2 oz",
+      "canUpc": "",
+      "caseUpc": "757528048518",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "127650",
+      "description": "Takis Pop! Fuego Popcorn 2 oz",
+      "canUpc": "",
+      "caseUpc": "757528047696",
+      "casesPerPallet": 72
+    },
+    {
+      "code": "126496",
+      "description": "Takis Waves Fuego Wavy Potato Chips 2.5 oz",
+      "canUpc": "",
+      "caseUpc": "757528045371",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "127646",
+      "description": "Takis Waves Intense Nacho 2.5 oz",
+      "canUpc": "",
+      "caseUpc": "757528047672",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "514418",
+      "description": "Takis Waves Blue Heat Wavy Potato Chips 2.5 oz",
+      "canUpc": "",
+      "caseUpc": "757528050177",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "514421",
+      "description": "Takis Waves Dragon Sweet Chili Wavy Potato Chips 2.5 oz",
+      "canUpc": "",
+      "caseUpc": "757528050207",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "127051",
+      "description": "Takis Kettlez Jalapeno Kettle-Cooked Potato Chips 2.5 oz",
+      "canUpc": "",
+      "caseUpc": "757528046385",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "127050",
+      "description": "Takis Kettlez Habanero Fury Kettle-Cooked Potato Chips 2.5 oz",
+      "canUpc": "",
+      "caseUpc": "757528XXXXXX",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "127049",
+      "description": "Takis Kettlez Fuego Kettle-Cooked Potato Chips 2.5 oz",
+      "canUpc": "",
+      "caseUpc": "757528046361",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "128998",
+      "description": "Takis Chippz Fuego Potato Chips 2.5 oz",
+      "canUpc": "",
+      "caseUpc": "757528048235",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "128564",
+      "description": "Takis Chippz BBQ Blast Potato Chips 2.5 oz",
+      "canUpc": "",
+      "caseUpc": "757528048709",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "128566",
+      "description": "Takis Chippz Classic Potato Chips 2.5 oz",
+      "canUpc": "",
+      "caseUpc": "757528048723",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "515337",
+      "description": "Takis Fuego Duos 3 oz Snack Size Bag 3 oz",
+      "canUpc": "",
+      "caseUpc": "757528051976",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "126430",
+      "description": "Takis Intense Nacho Rolled Tortilla Chips 3.25 oz",
+      "canUpc": "",
+      "caseUpc": "757528008796",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "128629",
+      "description": "Takis Dragon Sweet Chili Rolled Tortilla Chips 3.25 oz",
+      "canUpc": "",
+      "caseUpc": "757528048839",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "128981",
+      "description": "Takis Buckin' Ranch Rolled Tortilla Chips 3.25 oz",
+      "canUpc": "",
+      "caseUpc": "757528050016",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "128309",
+      "description": "Takis Fuego Rolled Tortilla Chips 3.25 oz",
+      "canUpc": "",
+      "caseUpc": "757528048075",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "128665",
+      "description": "Takis Nitro Rolled Tortilla Chips 3.25 oz",
+      "canUpc": "",
+      "caseUpc": "757528049102",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "128313",
+      "description": "Takis Blue Heat Rolled Tortilla Chips 3.25 oz",
+      "canUpc": "",
+      "caseUpc": "757528048112",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "128666",
+      "description": "Takis Rolls Crunchy Fajita Tortilla Chips 3.25 oz",
+      "canUpc": "",
+      "caseUpc": "757528049119",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "128667",
+      "description": "Takis Rolls Guacamole Tortilla Chips 3.25 oz",
+      "canUpc": "",
+      "caseUpc": "757528049126",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "515690",
+      "description": "Takis Rolls Zombie Tortilla Chips (Seasonal) 3.25 oz",
+      "canUpc": "",
+      "caseUpc": "757528049621",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "515036",
+      "description": "Takis Rolls Fuego Takis To Go 3.25 oz",
+      "canUpc": "",
+      "caseUpc": "757528XXXXXX",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "515100",
+      "description": "Takis Rolls Chile Limon Torilla Chips (New 2-2025) 3.25 oz",
+      "canUpc": "",
+      "caseUpc": "757528051525",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "515228",
+      "description": "Takis Rolls Nacho Xplosion Tortilla Chips (New 2-2025) 3.25 oz",
+      "canUpc": "",
+      "caseUpc": "757528051655",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "514667",
+      "description": "Takis Rolls Cobra Tortilla Chips (New 2025) 3.25 oz",
+      "canUpc": "",
+      "caseUpc": "757528050887",
+      "casesPerPallet": 112
+    },
+    {
+      "code": "124317",
+      "description": "Takis Rolls Fuego Tortilla Chips 9.9 oz",
+      "canUpc": "",
+      "caseUpc": "757528008680",
+      "casesPerPallet": 72
+    },
+    {
+      "code": "124679",
+      "description": "Takis Rolls Blue Heat Tortilla Chips 9.9 oz",
+      "canUpc": "",
+      "caseUpc": "757528037475",
+      "casesPerPallet": 72
+    },
+    {
+      "code": "124724",
+      "description": "Takis Rolls Fajitas Tortilla Chips 9.9 oz",
+      "canUpc": "",
+      "caseUpc": "757528008703",
+      "casesPerPallet": 72
+    },
+    {
+      "code": "124726",
+      "description": "Takis Rolls Nitro Tortilla Chips 9.9 oz",
+      "canUpc": "",
+      "caseUpc": "757528008697",
+      "casesPerPallet": 72
+    },
+    {
+      "code": "126429",
+      "description": "Takis Rolls Intense Nacho Tortilla Chips 9.9 oz",
+      "canUpc": "",
+      "caseUpc": "757528045272",
+      "casesPerPallet": 72
+    },
+    {
+      "code": "514688",
+      "description": "Takis Kaboom Rolled Tortilla Chips 9.9 oz",
+      "canUpc": "",
+      "caseUpc": "757528051006",
+      "casesPerPallet": 72
+    },
+    {
+      "code": "128630",
+      "description": "Takis Dragon Sweet Chili Rolled Tortilla Chips 9.9 oz",
+      "canUpc": "",
+      "caseUpc": "757528048846",
+      "casesPerPallet": 72
+    },
+    {
+      "code": "124725",
+      "description": "Takis Guacamole Rolled Tortilla Chips 9.9 oz",
+      "canUpc": "",
+      "caseUpc": "757528026448",
+      "casesPerPallet": 72
+    },
+    {
+      "code": "128980",
+      "description": "Takis Buckin' Ranch Rolled Tortilla Chips 9.9 oz",
+      "canUpc": "",
+      "caseUpc": "757528050009",
+      "casesPerPallet": 72
+    },
+    {
+      "code": "125088",
+      "description": "Takis Zombie Rolled Tortilla Chips 9.9 oz",
+      "canUpc": "",
+      "caseUpc": "757528028077",
+      "casesPerPallet": 72
+    },
+    {
+      "code": "124722",
+      "description": "Takis Stix Fuego Corn Chips 9.9 oz",
+      "canUpc": "",
+      "caseUpc": "757528XXXXXX",
+      "casesPerPallet": 72
+    },
+    {
+      "code": "514449",
+      "description": "Takis Rolls Churro Charge Tortilla Chips (FALL 2025) 9.9 oz",
+      "canUpc": "",
+      "caseUpc": "757528050412",
+      "casesPerPallet": 72
+    },
+    {
+      "code": "514666",
+      "description": "Takis Rolls Cobra Tortilla Chips (New 2025) 9.9 oz",
+      "canUpc": "",
+      "caseUpc": "757528050870",
+      "casesPerPallet": 72
+    },
+    {
+      "code": "515229",
+      "description": "Takis Rolls Nacho Xplosion Tortilla Chips (New 2-2025) 9.9 oz",
+      "canUpc": "",
+      "caseUpc": "757528051662",
+      "casesPerPallet": 72
+    }
+  ],
+  "Jumex": [
+    {
+      "code": "",
+      "description": "Jumex Prisma 12/960 ml - Strawberry Banana",
+      "canUpc": "",
+      "caseUpc": "76406063109",
+      "casesPerPallet": 64
+    },
+    {
+      "code": "",
+      "description": "Jumex Prisma 12/960 ml - Apple",
+      "canUpc": "",
+      "caseUpc": "76406061709",
+      "casesPerPallet": 64
+    },
+    {
+      "code": "",
+      "description": "Jumex Prisma 12/960 ml - Peach",
+      "canUpc": "",
+      "caseUpc": "76406061907",
+      "casesPerPallet": 64
+    },
+    {
+      "code": "",
+      "description": "Jumex Prisma 12/960 ml - Guava",
+      "canUpc": "",
+      "caseUpc": "76406061600",
+      "casesPerPallet": 64
+    },
+    {
+      "code": "",
+      "description": "Jumex Prisma 12/960 ml - Mango",
+      "canUpc": "",
+      "caseUpc": "76406061808",
+      "casesPerPallet": 64
+    },
+    {
+      "code": "",
+      "description": "Jumex Prisma 12/960 ml - Pineapple",
+      "canUpc": "",
+      "caseUpc": "76406063307",
+      "casesPerPallet": 64
+    },
+    {
+      "code": "",
+      "description": "Jumex Prisma 12/960 ml - Pineapple Coconut",
+      "canUpc": "",
+      "caseUpc": "76406063604",
+      "casesPerPallet": 64
+    },
+    {
+      "code": "",
+      "description": "Jumex Prisma 12/960 ml - Strawberry",
+      "canUpc": "",
+      "caseUpc": "76406062300",
+      "casesPerPallet": 64
+    },
+    {
+      "code": "",
+      "description": "Jumex Lata Botella 12/460 ml - Strawberry Banana",
+      "canUpc": "",
+      "caseUpc": "76406668205",
+      "casesPerPallet": 147
+    },
+    {
+      "code": "",
+      "description": "Jumex Lata Botella 12/460 ml - Pineapple Coconut",
+      "canUpc": "",
+      "caseUpc": "76406668601",
+      "casesPerPallet": 147
+    },
+    {
+      "code": "",
+      "description": "Jumex Lata Botella 12/460 ml - Guava",
+      "canUpc": "",
+      "caseUpc": "76406668502",
+      "casesPerPallet": 147
+    },
+    {
+      "code": "",
+      "description": "Jumex Lata Botella 12/460 ml - Mango",
+      "canUpc": "",
+      "caseUpc": "76406668304",
+      "casesPerPallet": 147
+    },
+    {
+      "code": "",
+      "description": "Jumex Lata Botella 12/460 ml - Peach",
+      "canUpc": "",
+      "caseUpc": "76406668106",
+      "casesPerPallet": 147
+    },
+    {
+      "code": "",
+      "description": "Jumex Lata 24/335 ml - Pineapple Coconut",
+      "canUpc": "",
+      "caseUpc": "76406022601",
+      "casesPerPallet": 100
+    },
+    {
+      "code": "",
+      "description": "Jumex Lata 24/335 ml - Pineapple",
+      "canUpc": "",
+      "caseUpc": "76406021307",
+      "casesPerPallet": 100
+    },
+    {
+      "code": "",
+      "description": "Jumex Lata 24/335 ml - Strawberry Nectar",
+      "canUpc": "",
+      "caseUpc": "76406022304",
+      "casesPerPallet": 100
+    },
+    {
+      "code": "",
+      "description": "Jumex Lata 24/335 ml - Strawberry Banana",
+      "canUpc": "",
+      "caseUpc": "76406023103",
+      "casesPerPallet": 100
+    },
+    {
+      "code": "",
+      "description": "Jumex Lata 24/335 ml - Apple",
+      "canUpc": "",
+      "caseUpc": "76406021703",
+      "casesPerPallet": 100
+    },
+    {
+      "code": "",
+      "description": "Jumex Lata 24/335 ml - Appricot",
+      "canUpc": "",
+      "caseUpc": "76406021505",
+      "casesPerPallet": 100
+    },
+    {
+      "code": "",
+      "description": "Jumex Lata 24/335 ml - Guanabana",
+      "canUpc": "",
+      "caseUpc": "76406022403",
+      "casesPerPallet": 100
+    },
+    {
+      "code": "",
+      "description": "Jumex Lata 24/335 ml - Guava",
+      "canUpc": "",
+      "caseUpc": "76406021604",
+      "casesPerPallet": 100
+    },
+    {
+      "code": "",
+      "description": "Jumex Lata 24/335 ml - Peach",
+      "canUpc": "",
+      "caseUpc": "76406021901",
+      "casesPerPallet": 100
+    },
+    {
+      "code": "",
+      "description": "Jumex Lata 24/335 ml - Mango",
+      "canUpc": "",
+      "caseUpc": "76406021802",
+      "casesPerPallet": 100
+    }
+  ],
+  "Alani": [
+    {
+      "code": "",
+      "description": "Alani Nu Cherry Slush 2x12oz",
+      "canUpc": "",
+      "caseUpc": "810030512257",
+      "casesPerPallet": 208
+    },
+    {
+      "code": "",
+      "description": "Alani Nu Hawaiian Shaved Ice 2x12oz New Label",
+      "canUpc": "",
+      "caseUpc": "850645008387",
+      "casesPerPallet": 208
+    },
+    {
+      "code": "",
+      "description": "Alani Nu Cherry Twist 2x12oz",
+      "canUpc": "",
+      "caseUpc": "810030518082",
+      "casesPerPallet": 208
+    },
+    {
+      "code": "",
+      "description": "Alani Nu Watermelon Wave 2x12oz",
+      "canUpc": "",
+      "caseUpc": "810030510482",
+      "casesPerPallet": 208
+    },
+    {
+      "code": "",
+      "description": "Alani Nu Strawberry Sunrise 2x12oz",
+      "canUpc": "",
+      "caseUpc": "810030519133",
+      "casesPerPallet": 208
+    },
+    {
+      "code": "",
+      "description": "Alani Nu Blue Slush 2x12oz",
+      "canUpc": "",
+      "caseUpc": "810030510154",
+      "casesPerPallet": 208
+    },
+    {
+      "code": "",
+      "description": "Alani Nu Pink Slush 2x12oz",
+      "canUpc": "",
+      "caseUpc": "810030518501",
+      "casesPerPallet": 208
+    },
+    {
+      "code": "",
+      "description": "Alani Nu Juicy Peach 2x12oz",
+      "canUpc": "",
+      "caseUpc": "810030513827",
+      "casesPerPallet": 208
+    },
+    {
+      "code": "",
+      "description": "Alani Nu Cosmic Stardust 2x12oz",
+      "canUpc": "",
+      "caseUpc": "810030510024",
+      "casesPerPallet": 208
+    },
+    {
+      "code": "",
+      "description": "Alani Nu Dream Float 2x12oz",
+      "canUpc": "",
+      "caseUpc": "810030514077",
+      "casesPerPallet": 208
+    },
+    {
+      "code": "",
+      "description": "Alani Nu Orange Kiss 2x12oz",
+      "canUpc": "",
+      "caseUpc": "850645008363",
+      "casesPerPallet": 208
+    },
+    {
+      "code": "",
+      "description": "Alani Nu Sherbet Swirl 2x12oz",
+      "canUpc": "",
+      "caseUpc": "810030519157",
+      "casesPerPallet": 208
+    },
+    {
+      "code": "",
+      "description": "Alani Nu Cotton Candy 2x12oz",
+      "canUpc": "",
+      "caseUpc": "810030519171",
+      "casesPerPallet": 208
+    },
+    {
+      "code": "",
+      "description": "Alani Nu Breezeberry 2x12oz",
+      "canUpc": "",
+      "caseUpc": "810030511052",
+      "casesPerPallet": 208
+    }
+  ],
+  "Coca-Cola": [
+    {
+      "code": "115583",
+      "description": "Coca-Cola",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "116153",
+      "description": "Coca-Cola Caffeine Free",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "121750",
+      "description": "Coca-Cola Zero Sugar",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "146533",
+      "description": "Coca-Cola Zero Sugar Caffeine Free",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "116305",
+      "description": "Coca-Cola Cherry",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "125491",
+      "description": "Coca-Cola Cherry Zero",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "116662",
+      "description": "Coca-Cola Vanilla",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "157231",
+      "description": "Coca-Cola Cherry Vanilla Zero",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "413424",
+      "description": "Coca-Cola Orange Cream",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "413422",
+      "description": "Coca-Cola Orange Cream Zero Sugar",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "115584",
+      "description": "Diet Coke",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "115585",
+      "description": "Caffeine Free Diet Coke",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "115586",
+      "description": "Sprite",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "119791",
+      "description": "Sprite Zero Sugar",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "412672",
+      "description": "Sprite Chill",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "412669",
+      "description": "Sprite Chill Zero Sugar",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "116307",
+      "description": "Fresca",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "122109",
+      "description": "Fresca Peach",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "122110",
+      "description": "Fresca Black Cherry",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "116309",
+      "description": "Pibb Xtra",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "116150",
+      "description": "Mello Yello",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "146125",
+      "description": "Seagram's Ginger Ale",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "116149",
+      "description": "Barq's Root Beer",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "116308",
+      "description": "Barq's Root Beer Zero Sugar",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "116151",
+      "description": "Fanta Orange",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "122327",
+      "description": "Fanta Orange Zero",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "116459",
+      "description": "Fanta Pineapple",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "116460",
+      "description": "Fanta Strawberry",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "116320",
+      "description": "Minute Maid Lemonade",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "116321",
+      "description": "Minute Maid Fruit Punch",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "412705",
+      "description": "Peace Tea Caddy Shack",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "412704",
+      "description": "Peace Tea Just Peachy",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "413113",
+      "description": "Peace Tea Razzleberry",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 104
+    },
+    {
+      "code": "101728",
+      "description": "Powerade Mountain Berry Blast",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 54
+    },
+    {
+      "code": "102752",
+      "description": "Powerade Fruit Punch",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 54
+    },
+    {
+      "code": "117687",
+      "description": "Powerade Orange",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 54
+    },
+    {
+      "code": "102751",
+      "description": "Powerade Lemon-Lime",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 54
+    },
+    {
+      "code": "131899",
+      "description": "Powerade Zero Sugar Mixed Berry",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 54
+    },
+    {
+      "code": "1",
+      "description": "test",
+      "canUpc": "",
+      "caseUpc": "",
+      "casesPerPallet": 1
+    }
+  ]
+}

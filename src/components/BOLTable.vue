@@ -2,10 +2,12 @@
 import { computed, ref } from 'vue'
 
 const props = defineProps({
-  products: Array
+  products: Array,
+  catalogError: String,
+  savingCatalog: Boolean
 })
 
-const emit = defineEmits(['update:products'])
+const emit = defineEmits(['update:products', 'add-product', 'delete-product'])
 
 const showAddForm = ref(false)
 
@@ -14,10 +16,7 @@ const newProduct = ref({
   description: '',
   canUpc: '',
   caseUpc: '',
-  casesPerPallet: 0,
-  included: false,
-  quantity: '',
-  expiration: ''
+  casesPerPallet: 0
 })
 
 const updateProduct = (index, field, value) => {
@@ -39,25 +38,22 @@ const toggleInclude = (index) => {
 }
 
 const addProduct = () => {
-  const newProducts = [...props.products, { ...newProduct.value }]
-  emit('update:products', newProducts)
+  emit('add-product', { ...newProduct.value })
+}
+
+const resetAddForm = () => {
   newProduct.value = {
     code: '',
     description: '',
     canUpc: '',
     caseUpc: '',
-    casesPerPallet: 0,
-    included: false,
-    quantity: '',
-    expiration: ''
+    casesPerPallet: 0
   }
   showAddForm.value = false
 }
 
 const deleteProduct = (index) => {
-  const newProducts = [...props.products]
-  newProducts.splice(index, 1)
-  emit('update:products', newProducts)
+  emit('delete-product', index)
 }
 
 const grandTotal = computed(() => {
@@ -69,13 +65,22 @@ const grandTotal = computed(() => {
   }, 0)
 })
 
-defineExpose({ grandTotal })
+defineExpose({ grandTotal, resetAddForm })
 </script>
 
 <template>
   <div class="mb-8">
+    <div v-if="catalogError" class="mb-4 bg-red-50 border border-red-200 text-red-700 rounded px-4 py-3 text-sm">
+      {{ catalogError }}
+    </div>
     <div class="mb-4">
-      <button @click="showAddForm = !showAddForm" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Add Product</button>
+      <button
+        @click="showAddForm = !showAddForm"
+        :disabled="savingCatalog"
+        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 disabled:bg-gray-400 disabled:cursor-not-allowed"
+      >
+        Add Product
+      </button>
     </div>
     <div v-if="showAddForm" class="mb-4 p-4 border border-gray-300 rounded bg-gray-50">
       <form @submit.prevent="addProduct" class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -84,7 +89,13 @@ defineExpose({ grandTotal })
         <input v-model="newProduct.canUpc" placeholder="Can UPC" class="border border-gray-300 rounded px-3 py-2">
         <input v-model="newProduct.caseUpc" placeholder="Case UPC" class="border border-gray-300 rounded px-3 py-2">
         <input v-model.number="newProduct.casesPerPallet" placeholder="Cases per Pallet" required class="border border-gray-300 rounded px-3 py-2">
-        <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 col-span-1 md:col-span-2">Add Product</button>
+        <button
+          type="submit"
+          :disabled="savingCatalog"
+          class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 disabled:bg-gray-400 disabled:cursor-not-allowed col-span-1 md:col-span-2"
+        >
+          {{ savingCatalog ? 'Saving...' : 'Add Product' }}
+        </button>
       </form>
     </div>
     <table class="min-w-full border-collapse border border-gray-300 text-sm">
@@ -153,7 +164,13 @@ defineExpose({ grandTotal })
           <td class="border border-gray-300 px-4 py-1 font-mono text-xs text-gray-500">{{ product.caseUpc }}</td>
           <!-- Actions -->
           <td class="border border-gray-300 px-4 py-1 text-center">
-            <button @click="deleteProduct(index)" class="text-red-500 hover:text-red-700 text-xl">&times;</button>
+            <button
+              @click="deleteProduct(index)"
+              :disabled="savingCatalog"
+              class="text-red-500 hover:text-red-700 disabled:text-gray-300 disabled:cursor-not-allowed text-xl"
+            >
+              &times;
+            </button>
           </td>
         </tr>
       </tbody>
