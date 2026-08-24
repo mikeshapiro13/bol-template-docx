@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('data/products.json','utf8'\\)\\); console.log\\('json ok'\\)\")",
+      "Bash(node --input-type=module -e \"import\\('./src/data/products.js'\\).then\\(m => console.log\\('js ok, Celsius count:', m.productCatalogs.Celsius.length\\)\\)\")",
+      "Bash(node --check /home/mike/dev/bol-template-docx/scripts/sync-new-catalogs.mjs)",
+      "Bash(bash -n /home/mike/dev/bol-template-docx/deploy.sh)"
+    ]
+  }
+}

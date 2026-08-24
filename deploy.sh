@@ -42,7 +42,7 @@ echo -e "${YELLOW}Deploying catalog API files...${NC}"
 
 if ssh -i "$SSH_KEY" $REMOTE_USER@$SERVER "mkdir -p '$REMOTE_API_PATH' '$REMOTE_DATA_PATH'" \
     && rsync -avz -e "ssh -i $SSH_KEY" server/catalog-api.mjs $REMOTE_USER@$SERVER:$REMOTE_API_PATH/ \
-    && rsync -avz --ignore-existing -e "ssh -i $SSH_KEY" data/products.json $REMOTE_USER@$SERVER:$REMOTE_DATA_PATH/products.json; then
+    && node scripts/sync-new-catalogs.mjs "$SSH_KEY" "$REMOTE_USER@$SERVER" "$REMOTE_DATA_PATH/products.json"; then
     echo -e "${GREEN}Catalog API files deployed.${NC}"
     echo -e "${YELLOW}Run the API with CATALOG_DATA_FILE=$REMOTE_DATA_PATH/products.json and proxy nginx /api to it.${NC}"
 else
