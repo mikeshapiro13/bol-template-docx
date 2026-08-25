@@ -2,7 +2,7 @@ import { Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell, Width
 import { saveAs } from "file-saver";
 import { formatAddress } from "./docxFormatting";
 
-export const generateDOCX = async (formData, products, catalogName) => {
+export const generatePODOCX = async (formData, products, catalogName) => {
     const includedProducts = products.filter(p => p.included && p.quantity);
     const totalPallets = includedProducts.reduce((acc, curr) => acc + (parseInt(curr.quantity) || 0), 0);
     const totalCases = includedProducts.reduce((acc, curr) => acc + ((parseInt(curr.quantity) || 0) * (curr.casesPerPallet || 0)), 0);
@@ -20,20 +20,20 @@ export const generateDOCX = async (formData, products, catalogName) => {
                 },
             },
             children: [
-                // 1. BILL OF LADING TITLE
+                // 1. PURCHASE ORDER TITLE
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
                     spacing: { after: 400 },
                     children: [
                         new TextRun({
-                            text: "BILL OF LADING",
+                            text: "PURCHASE ORDER",
                             bold: true,
                             size: 44, // 22pt
                         }),
                     ],
                 }),
 
-                // 2. Date and Instructions
+                // 2. PO Number and Date
                 new Table({
                     width: { size: CONTENT_WIDTH, type: WidthType.DXA },
                     columnWidths: [CONTENT_WIDTH * 0.6, CONTENT_WIDTH * 0.4],
@@ -50,11 +50,11 @@ export const generateDOCX = async (formData, products, catalogName) => {
                             children: [
                                 new TableCell({
                                     width: { size: CONTENT_WIDTH * 0.6, type: WidthType.DXA },
-                                    children: (formData.instructions || "").split('\n').map(line =>
+                                    children: [
                                         new Paragraph({
-                                            children: [new TextRun({ text: line, size: 20 })],
-                                        })
-                                    ),
+                                            children: [new TextRun({ text: `PO #: ${formData.poNumber}`, size: 20, bold: true })],
+                                        }),
+                                    ],
                                 }),
                                 new TableCell({
                                     width: { size: CONTENT_WIDTH * 0.4, type: WidthType.DXA },
@@ -71,7 +71,7 @@ export const generateDOCX = async (formData, products, catalogName) => {
                 }),
                 new Paragraph({ text: "", spacing: { after: 300 } }),
 
-                // 3. Ship From / Ship To Section
+                // 3. Supplier / Buyer Section
                 new Table({
                     width: { size: CONTENT_WIDTH, type: WidthType.DXA },
                     columnWidths: [5000, 800, 5000],
@@ -96,8 +96,8 @@ export const generateDOCX = async (formData, products, catalogName) => {
                                         right: { style: BorderStyle.SINGLE, size: 6 },
                                     },
                                     children: [
-                                        new Paragraph({ children: [new TextRun({ text: "SHIP FROM (Shipper):", bold: true, size: 20 })] }),
-                                        ...formatAddress(formData.shipFrom).map(line =>
+                                        new Paragraph({ children: [new TextRun({ text: "SUPPLIER:", bold: true, size: 20 })] }),
+                                        ...formatAddress(formData.supplier).map(line =>
                                             new Paragraph({ children: [new TextRun({ text: line, size: 20 })] })
                                         ),
                                     ],
@@ -113,8 +113,8 @@ export const generateDOCX = async (formData, products, catalogName) => {
                                         right: { style: BorderStyle.SINGLE, size: 6 },
                                     },
                                     children: [
-                                        new Paragraph({ children: [new TextRun({ text: "SHIP TO (Consignee):", bold: true, size: 20 })] }),
-                                        ...formatAddress(formData.shipTo).map(line =>
+                                        new Paragraph({ children: [new TextRun({ text: "BUYER:", bold: true, size: 20 })] }),
+                                        ...formatAddress(formData.buyer).map(line =>
                                             new Paragraph({ children: [new TextRun({ text: line, size: 20 })] })
                                         ),
                                     ],
@@ -128,12 +128,12 @@ export const generateDOCX = async (formData, products, catalogName) => {
                 // 4. Products Table
                 new Table({
                     width: { size: CONTENT_WIDTH, type: WidthType.DXA },
-                    columnWidths: [800, 800, 1400, 1000, 3200, 1800, 1800],
+                    columnWidths: [800, 800, 1000, 3800, 2200, 2200],
                     rows: [
                         new TableRow({
                             tableHeader: true,
-                            children: ["Pallets", "Cases", "Expiration", "Code", "Description", "Can UPC", "Case UPC"].map((text, i) => new TableCell({
-                                width: { size: [800, 800, 1400, 1000, 3200, 1800, 1800][i], type: WidthType.DXA },
+                            children: ["Pallets", "Cases", "Code", "Description", "Can UPC", "Case UPC"].map((text, i) => new TableCell({
+                                width: { size: [800, 800, 1000, 3800, 2200, 2200][i], type: WidthType.DXA },
                                 verticalAlign: VerticalAlign.CENTER,
                                 shading: { fill: "F0F0F0" },
                                 children: [new Paragraph({
@@ -147,13 +147,12 @@ export const generateDOCX = async (formData, products, catalogName) => {
                             children: [
                                 { t: p.quantity, a: AlignmentType.CENTER },
                                 { t: (parseInt(p.quantity) || 0) * (p.casesPerPallet || 0), a: AlignmentType.CENTER },
-                                { t: p.expiration || "", a: AlignmentType.CENTER },
                                 { t: p.code, a: AlignmentType.CENTER },
                                 { t: p.description, a: AlignmentType.LEFT },
                                 { t: p.canUpc, a: AlignmentType.LEFT },
                                 { t: p.caseUpc, a: AlignmentType.LEFT }
                             ].map((cell, i) => new TableCell({
-                                width: { size: [800, 800, 1400, 1000, 3200, 1800, 1800][i], type: WidthType.DXA },
+                                width: { size: [800, 800, 1000, 3800, 2200, 2200][i], type: WidthType.DXA },
                                 verticalAlign: VerticalAlign.CENTER,
                                 children: [new Paragraph({
                                     alignment: cell.a,
@@ -176,118 +175,10 @@ export const generateDOCX = async (formData, products, catalogName) => {
                         }),
                     ],
                 }),
-                new Paragraph({ text: "", spacing: { after: 100 } }),
-
-                // 6. Legal Statement
-                new Paragraph({
-                    children: [
-                        new TextRun({
-                            text: "If this shipment is to be delivered to the consignee without recourse on the consignor, the consignor shall sign the following statement: The carrier shall not make delivery of this shipment without payment of freight and all other lawful charges.",
-                            size: 16,
-                        }),
-                    ],
-                }),
-                new Paragraph({ text: "", spacing: { after: 100 } }),
-
-                // 7. Signature Footer
-                new Table({
-                    width: { size: CONTENT_WIDTH, type: WidthType.DXA },
-                    columnWidths: [4800, 1200, 4800],
-                    borders: {
-                        top: { style: BorderStyle.NONE }, bottom: { style: BorderStyle.NONE },
-                        left: { style: BorderStyle.NONE }, right: { style: BorderStyle.NONE },
-                        insideHorizontal: { style: BorderStyle.NONE }, insideVertical: { style: BorderStyle.NONE },
-                    },
-                    rows: [
-                        new TableRow({
-                            children: [
-                                new TableCell({
-                                    width: { size: 4800, type: WidthType.DXA },
-                                    borders: { bottom: { style: BorderStyle.SINGLE, size: 6 } },
-                                    children: [new Paragraph({ children: [new TextRun({ text: " ", size: 10 })] })],
-                                }),
-                                new TableCell({ width: { size: 1200, type: WidthType.DXA }, children: [] }),
-                                new TableCell({
-                                    width: { size: 4800, type: WidthType.DXA },
-                                    borders: { bottom: { style: BorderStyle.SINGLE, size: 6 } },
-                                    children: [new Paragraph({ children: [new TextRun({ text: " ", size: 10 })] })],
-                                }),
-                            ],
-                        }),
-                        new TableRow({
-                            children: [
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "(Signature of Shipper)", size: 16 })] })] }),
-                                new TableCell({ children: [] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "(Signature of Receiver)", size: 16 })] })] }),
-                            ],
-                        }),
-                    ],
-                }),
-                new Paragraph({ text: "", spacing: { before: 100 } }),
-
-                new Table({
-                    width: { size: CONTENT_WIDTH, type: WidthType.DXA },
-                    columnWidths: [CONTENT_WIDTH],
-                    borders: {
-                        top: { style: BorderStyle.NONE }, bottom: { style: BorderStyle.NONE },
-                        left: { style: BorderStyle.NONE }, right: { style: BorderStyle.NONE },
-                        insideHorizontal: { style: BorderStyle.NONE }, insideVertical: { style: BorderStyle.NONE },
-                    },
-                    rows: [
-                        new TableRow({
-                            children: [
-                                new TableCell({
-                                    borders: { bottom: { style: BorderStyle.SINGLE, size: 6 } },
-                                    children: [new Paragraph({ children: [new TextRun({ text: " ", size: 10 })] })],
-                                }),
-                            ],
-                        }),
-                        new TableRow({
-                            children: [
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Carrier", size: 16 })] })] }),
-                            ],
-                        }),
-                    ],
-                }),
-                new Paragraph({ text: "", spacing: { before: 100 } }),
-
-                new Table({
-                    width: { size: CONTENT_WIDTH, type: WidthType.DXA },
-                    columnWidths: [7000, 800, 3000],
-                    borders: {
-                        top: { style: BorderStyle.NONE }, bottom: { style: BorderStyle.NONE },
-                        left: { style: BorderStyle.NONE }, right: { style: BorderStyle.NONE },
-                        insideHorizontal: { style: BorderStyle.NONE }, insideVertical: { style: BorderStyle.NONE },
-                    },
-                    rows: [
-                        new TableRow({
-                            children: [
-                                new TableCell({
-                                    width: { size: 7000, type: WidthType.DXA },
-                                    borders: { bottom: { style: BorderStyle.SINGLE, size: 6 } },
-                                    children: [new Paragraph({ children: [new TextRun({ text: " ", size: 10 })] })],
-                                }),
-                                new TableCell({ width: { size: 800, type: WidthType.DXA }, children: [] }),
-                                new TableCell({
-                                    width: { size: 3000, type: WidthType.DXA },
-                                    borders: { bottom: { style: BorderStyle.SINGLE, size: 6 } },
-                                    children: [new Paragraph({ children: [new TextRun({ text: " ", size: 10 })] })],
-                                }),
-                            ],
-                        }),
-                        new TableRow({
-                            children: [
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Driver Signature", size: 16 })] })] }),
-                                new TableCell({ children: [] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Date", size: 16 })] })] }),
-                            ],
-                        }),
-                    ],
-                }),
             ],
         }],
     });
 
     const blob = await Packer.toBlob(doc);
-    saveAs(blob, `BOL_${catalogName}_${formData.date}.docx`);
+    saveAs(blob, `PO_${formData.poNumber}_${formData.date}.docx`);
 };

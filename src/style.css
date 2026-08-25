@@ -16,7 +16,7 @@
   }
 }
 
-.bol-container {
+.doc-container {
   max-width: 8.5in;
   margin: 0 auto;
   padding: 2rem;
@@ -24,7 +24,7 @@
 }
 
 @media screen {
-  .bol-container {
+  .doc-container {
     max-width: none;
     width: 100%;
   }

@@ -4,7 +4,8 @@ import { computed, ref } from 'vue'
 const props = defineProps({
   products: Array,
   catalogError: String,
-  savingCatalog: Boolean
+  savingCatalog: Boolean,
+  showExpiration: { type: Boolean, default: true }
 })
 
 const emit = defineEmits(['update:products', 'add-product', 'delete-product'])
@@ -104,7 +105,7 @@ defineExpose({ grandTotal, resetAddForm })
           <th class="border border-gray-300 px-4 py-2 w-16 text-center">Include</th>
           <th class="border border-gray-300 px-4 py-2 w-24 text-center">Pallets</th>
           <th class="border border-gray-300 px-4 py-2 text-center w-24">Cases</th>
-          <th class="border border-gray-300 px-4 py-2 text-center w-32">Expiration</th>
+          <th v-if="showExpiration" class="border border-gray-300 px-4 py-2 text-center w-32">Expiration</th>
           <th class="border border-gray-300 px-4 py-2 text-left">Code</th>
           <th class="border border-gray-300 px-4 py-2 text-left">Description</th>
           <th class="border border-gray-300 px-4 py-2 text-left">Can UPC</th>
@@ -144,8 +145,8 @@ defineExpose({ grandTotal, resetAddForm })
           </td>
 
           <!-- Expiration Date Column -->
-          <td class="border border-gray-300 px-2 py-1">
-            <input 
+          <td v-if="showExpiration" class="border border-gray-300 px-2 py-1">
+            <input
               v-if="product.included"
               type="text"
               :value="product.expiration"
@@ -181,7 +182,7 @@ defineExpose({ grandTotal, resetAddForm })
               <td class="border border-gray-800 px-2 py-2 text-center text-sm">
                 {{ products.reduce((acc, curr) => acc + (curr.included ? (parseInt(curr.quantity) || 0) * (curr.casesPerPallet || 0) : 0), 0) }} Cases
               </td>
-              <td colspan="6" class="border border-gray-800 px-4 py-2"></td>
+              <td :colspan="showExpiration ? 6 : 5" class="border border-gray-800 px-4 py-2"></td>
           </tr>
       </tfoot>
     </table>
