@@ -205,6 +205,37 @@ export const productCatalogs = {
         { code: 'FGSS700012045', description: 'Fizz Free Pink Lemonade', canUpc: '889392002355', caseUpc: '889392002362', quantity: '', casesPerPallet: 208 },
         { code: 'FGSS700012096', description: 'Fizz Free Dragonfruit Lime', canUpc: '889392002379', caseUpc: '889392002386', quantity: '', casesPerPallet: 208 },
     ],
+    'Electrolit': [
+        // Electrolit 21oz Bottles (12 Pack) (85 cases per pallet)
+        { code: '4022070', description: 'Electrolit Orange 21oz', canUpc: '887725000054', caseUpc: '10887725000051', quantity: '', casesPerPallet: 85 },
+        { code: '4021580', description: 'Electrolit Apple 21oz', canUpc: '887725000016', caseUpc: '10887725000013', quantity: '', casesPerPallet: 85 },
+        { code: '4022068', description: 'Electrolit Strawberry 21oz', canUpc: '887725000030', caseUpc: '10887725000037', quantity: '', casesPerPallet: 85 },
+        { code: '4021579', description: 'Electrolit Grape 21oz', canUpc: '887725000009', caseUpc: '10887725000006', quantity: '', casesPerPallet: 85 },
+        { code: '4022071', description: 'Electrolit Lemon-Lime 21oz', canUpc: '887725000061', caseUpc: '10887725000068', quantity: '', casesPerPallet: 85 },
+        { code: '4041942', description: 'Electrolit Strawberry-Kiwi 21oz', canUpc: '887725000252', caseUpc: '10887725000259', quantity: '', casesPerPallet: 85 },
+        { code: '4022069', description: 'Electrolit Coconut 21oz', canUpc: '887725000047', caseUpc: '10887725000044', quantity: '', casesPerPallet: 85 },
+        { code: '4049692', description: 'Electrolit Fruit Punch 21oz', canUpc: '887725000450', caseUpc: '10887725000457', quantity: '', casesPerPallet: 85 },
+        { code: '4049691', description: 'Electrolit Berry Bliss 21oz', canUpc: '887725000436', caseUpc: '10887725000433', quantity: '', casesPerPallet: 85 },
+        { code: '4049883', description: 'Electrolit Hibiscus-Jamaica 21oz', canUpc: '887725000412', caseUpc: '10887725000419', quantity: '', casesPerPallet: 85 },
+        { code: '4054957', description: 'Electrolit Cucumber-Lime 21oz', canUpc: '887725000979', caseUpc: '10887725000976', quantity: '', casesPerPallet: 85 },
+        { code: '4058130', description: 'Electrolit Blue Raspberry 21oz', canUpc: '887725001303', caseUpc: '10887725001300', quantity: '', casesPerPallet: 85 },
+        { code: '4058492', description: 'Electrolit Mango 21oz', canUpc: '887725001365', caseUpc: '10887725001362', quantity: '', casesPerPallet: 85 },
+        { code: '4059484', description: 'Electrolit Watermelon-Lime 21oz', canUpc: '887725001808', caseUpc: '10887725001805', quantity: '', casesPerPallet: 85 },
+        { code: '4059481', description: 'Electrolit Green Apple 21oz', canUpc: '887725001778', caseUpc: '10887725001775', quantity: '', casesPerPallet: 85 },
+        { code: '4064838', description: 'Electrolit Cherry Ice 21oz', canUpc: '887725002416', caseUpc: '10887725002413', quantity: '', casesPerPallet: 85 },
+        { code: '4053194', description: 'Electrolit Zero Berry Blast 21oz', canUpc: '887725000863', caseUpc: '10887725000860', quantity: '', casesPerPallet: 85 },
+        { code: '4052173', description: 'Electrolit Zero Lemon Breeze 21oz', canUpc: '887725000702', caseUpc: '10887725000709', quantity: '', casesPerPallet: 85 },
+        { code: '4052169', description: 'Electrolit Zero Fruit Punch Splash 21oz', canUpc: '887725000658', caseUpc: '10887725000655', quantity: '', casesPerPallet: 85 },
+        { code: '4057580', description: 'Electrolit Zero Blue Raspberry 21oz', canUpc: '887725001280', caseUpc: '10887725001287', quantity: '', casesPerPallet: 85 },
+        { code: '4057581', description: 'Electrolit Zero Strawberry-Banana 21oz', canUpc: '887725001297', caseUpc: '10887725001294', quantity: '', casesPerPallet: 85 },
+
+        // Electrolit 12oz Multipacks (70 cases per pallet)
+        { code: '4060452', description: 'Electrolit Blue Raspberry 12oz Multipack', canUpc: '887725002157', caseUpc: '10887725002154', quantity: '', casesPerPallet: 70 },
+        { code: '4060455', description: 'Electrolit Grape 12oz Multipack', canUpc: '887725002188', caseUpc: '10887725002185', quantity: '', casesPerPallet: 70 },
+        { code: '4060454', description: 'Electrolit Fruit Punch 12oz Multipack', canUpc: '887725002171', caseUpc: '10887725002178', quantity: '', casesPerPallet: 70 },
+        { code: '4060487', description: 'Electrolit Zero Strawberry-Banana 12oz Multipack', canUpc: '887725002195', caseUpc: '10887725002192', quantity: '', casesPerPallet: 70 },
+        { code: '4060453', description: 'Electrolit Strawberry Kiwi 12oz Multipack', canUpc: '887725002164', caseUpc: '10887725002161', quantity: '', casesPerPallet: 70 },
+    ],
     'Coca-Cola': [
         // 12oz Cans Sparkling (2/12 Packs) (8/13/104)
         { code: '115583', description: 'Coca-Cola', canUpc: '', caseUpc: '', quantity: '', casesPerPallet: 104 },
